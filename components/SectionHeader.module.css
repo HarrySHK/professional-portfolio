@@ -1,0 +1,13 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 40px;
+}
+
+.titleBlock { display: flex; flex-direction: column; gap: 14px; }
+
+.title { font-size: clamp(40px, 6vw, 96px); }
+
+.aside { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }

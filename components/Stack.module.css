@@ -1,0 +1,24 @@
+.section { padding-top: clamp(72px, 12vh, 140px); scroll-margin-top: 60px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  border-top: var(--rule);
+  border-left: var(--rule);
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+  border-right: var(--rule);
+  border-bottom: var(--rule);
+}
+
+.head { display: flex; justify-content: space-between; gap: 12px; }
+.title { font-size: 20px; line-height: 1.2; letter-spacing: -0.01em; }
+.count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip:hover { background: var(--color-accent); border-color: var(--color-accent); color: var(--paper); }

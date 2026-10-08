@@ -1,0 +1,37 @@
+.section { padding-top: clamp(72px, 12vh, 140px); scroll-margin-top: 60px; }
+
+.list { border-top: var(--rule); }
+.item { border-bottom: var(--rule); }
+
+.trigger {
+  all: unset;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 24px;
+  padding: 26px 0;
+  cursor: pointer;
+}
+.trigger:hover .company { color: var(--color-accent); }
+.trigger:focus-visible { outline: 2px solid var(--color-accent); outline-offset: -2px; }
+
+.period { flex: 0 0 220px; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.who { flex: 1 1 300px; display: flex; flex-direction: column; gap: 4px; }
+.company { font-size: clamp(22px, 2.4vw, 32px); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; transition: color 0.3s; }
+.role { font-size: 15px; font-weight: 600; color: var(--ink-accent); }
+.location { flex: 0 1 180px; font-size: 14px; color: var(--muted); }
+
+.icon { flex: 0 0 28px; display: flex; justify-content: flex-end; transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.iconOpen { transform: rotate(45deg); }
+
+.panel { display: flex; flex-wrap: wrap; gap: 24px; padding-bottom: 32px; animation: rise 0.45s ease both; }
+.spacer { flex: 0 0 220px; }
+.points { flex: 1 1 420px; display: flex; flex-direction: column; gap: 14px; max-width: 78ch; }
+.points li { display: flex; gap: 14px; font-size: 15.5px; line-height: 1.65; }
+.points li :global(.square) { width: 8px; height: 8px; margin-top: 0.62em; }
+
+@media (max-width: 720px) {
+  .spacer { display: none; }
+}

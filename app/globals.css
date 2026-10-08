@@ -1,0 +1,139 @@
+/* ─── Design tokens (Modernist) ─────────────────────────────── */
+:root {
+  --color-bg: #f3f2f2;
+  --color-surface: #eae9e9;
+  --color-text: #201e1d;
+  --color-accent: #ec3013;
+  --color-divider: color-mix(in srgb, #201e1d 40%, transparent);
+
+  --color-neutral-100: #f8f4f4;
+  --color-accent-400: #ff9783;
+  --color-accent-600: #dd2b0f;
+  --color-accent-700: #ae1800;
+
+  --ink-accent: var(--color-accent-700);
+  --paper: var(--color-neutral-100);
+  --muted: color-mix(in srgb, var(--color-text) 70%, transparent);
+  --hover-tint: color-mix(in srgb, var(--color-text) 4%, transparent);
+
+  --font: var(--font-archivo), system-ui, sans-serif;
+  --edge: clamp(20px, 5vw, 72px);
+  --max: 1440px;
+  --rule: 2px solid var(--color-divider);
+
+  --ease-out: cubic-bezier(0.2, 0.75, 0.1, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+html[data-theme='dark'] {
+  --color-bg: #141312;
+  --color-surface: #1e1c1b;
+  --color-text: #f1efee;
+  --color-divider: color-mix(in srgb, #f1efee 30%, transparent);
+  --ink-accent: var(--color-accent-400);
+  color-scheme: dark;
+}
+
+/* ─── Base ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.55;
+  background: var(--color-bg);
+  color: var(--color-text);
+  text-wrap: pretty;
+  overflow-x: hidden;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+h1, h2, h3, h4 { margin: 0; font-weight: 800; line-height: 0.92; letter-spacing: -0.04em; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+a { color: var(--color-text); text-decoration: none; }
+a:hover { color: var(--color-accent); }
+
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+.container { max-width: var(--max); margin: 0 auto; padding-inline: var(--edge); }
+
+.kicker {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-accent);
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.chip {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border: 1px solid var(--color-divider);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.square { display: inline-block; flex: none; width: 10px; height: 10px; background: var(--color-accent); }
+.blink { animation: blink 1.2s steps(2) infinite; }
+
+/* ─── Buttons ───────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 16px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  text-align: left;
+}
+.btn svg { display: block; flex: none; }
+.btn-primary { background: var(--color-accent); color: var(--color-bg); }
+.btn-primary:hover { background: var(--color-accent-600); color: var(--color-bg); }
+.btn-primary:active { background: var(--color-accent-700); }
+.btn-secondary { border-color: var(--color-divider); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); color: var(--color-text); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+.btn-icon { width: 38px; height: 38px; padding: 0; justify-content: center; }
+
+/* ─── Scroll reveal ─────────────────────────────────────────── */
+[data-reveal='pending'] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.9s ease, transform 1s var(--ease-out);
+}
+[data-reveal='visible'] { opacity: 1; transform: none; transition: opacity 0.9s ease, transform 1s var(--ease-out); }
+
+/* ─── Keyframes ─────────────────────────────────────────────── */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes fill { from { width: 0; } to { width: 100%; } }
+@keyframes pulse { from { left: 0; } to { left: calc(100% - 10px); } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

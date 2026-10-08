@@ -1,0 +1,25 @@
+.section { padding-block: clamp(72px, 12vh, 140px); }
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 24px;
+  padding-block: 28px;
+  border-top: var(--rule);
+}
+
+.degree { display: flex; flex-direction: column; gap: 6px; }
+.school { font-size: clamp(26px, 3vw, 40px); line-height: 1.05; letter-spacing: -0.02em; }
+.name { font-size: 15.5px; }
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-accent);
+}
+.status :global(.square) { width: 8px; height: 8px; }
+
+.meta { display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--muted); }
