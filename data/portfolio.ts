@@ -159,6 +159,17 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'global-ecommerce-alliance', name: 'Global Ecommerce Alliance', category: 'Web', company: 'Iberianz', year: '2025', role: 'Full Stack Developer',
+    stack: ['Next.js', 'Node.js', 'Express', 'MongoDB'],
+    summary: 'Led full-stack development of Global Ecommerce Alliance, a web-based portal, using the MERN stack (Next.js, MongoDB, Express, and Node.js), and managed its CI/CD pipeline, servers, and cloud rollout.',
+    scenes: [
+      { label: 'Portal', tech: 'Next.js', caption: 'Members use the alliance through a web portal.' },
+      { label: 'API', tech: 'Node.js + Express', caption: 'An Express API on Node.js serves the portal.' },
+      { label: 'Records', tech: 'MongoDB', caption: 'Portal data is stored in MongoDB.' },
+      { label: 'Ship', tech: 'CI/CD', caption: 'Releases go out through the deployment pipeline.' },
+    ],
+  },
+  {
     slug: 'activesos', name: 'ActiveSOS', category: 'Mobile', company: 'Jumppace', year: '2024', role: 'Associate Software Engineer',
     stack: ['Node.js', 'MongoDB', 'Next.js', 'MUI'],
     summary: 'Built the backend and admin dashboard for the Child Tracing App (ActiveSOS) using Node.js, MongoDB, and Next.js with MUI, enabling seamless tracking and management.',
@@ -189,6 +200,17 @@ export const projects: Project[] = [
       { label: 'API', tech: 'Express.js', caption: 'An Express.js API records the gift.' },
       { label: 'Records', tech: 'MongoDB', caption: 'Donations are kept in MongoDB.' },
       { label: 'Manage', tech: 'Next.js + MUI', caption: 'The charity manages donations from the admin.' },
+    ],
+  },
+  {
+    slug: 'caribo', name: 'Caribo', category: 'Mobile', company: 'Jumppace', year: '2024', role: 'Associate Software Engineer',
+    stack: ['Node.js', 'Express', 'MongoDB', 'Next.js', 'Tailwind CSS'],
+    summary: 'Developed the backend of the mobile app and admin dashboard for the Car and Boat Rental Platform (Caribo) using Node.js, Express, MongoDB, Next.js, and Tailwind CSS.',
+    scenes: [
+      { label: 'Browse', tech: 'Rental app', caption: 'A renter looks for a car or a boat.' },
+      { label: 'Book', tech: 'Node.js + Express', caption: 'The Express API takes the booking.' },
+      { label: 'Store', tech: 'MongoDB', caption: 'Listings and bookings are kept in MongoDB.' },
+      { label: 'Admin', tech: 'Next.js + Tailwind', caption: 'Operators manage the fleet from the admin dashboard.' },
     ],
   },
   {
@@ -226,7 +248,7 @@ export const jobs: Job[] = [
   {
     company: 'Iberianz Pvt Ltd', role: 'Full Stack Developer', period: 'December 2024 – November 2025', location: 'Karachi, Pakistan',
     points: [
-      'Led the full-stack development of the project using MERN stack (Next.js, MongoDB, Express, and Node.js) to ensure a robust and scalable architecture.',
+      'Led the full-stack development of Global Ecommerce Alliance, a web-based portal, using the MERN stack (Next.js, MongoDB, Express, and Node.js) to ensure a robust and scalable architecture.',
       'Managed the entire deployment pipeline, including CI/CD automation, server management, and cloud infrastructure for smooth production rollouts.',
     ],
   },
@@ -237,6 +259,7 @@ export const jobs: Job[] = [
       'Built the backend and admin dashboard for the Child Tracing App (ActiveSOS) using Node.js, MongoDB, and Next.js with MUI, enabling seamless tracking and management.',
       'Designed and implemented the backend and admin dashboard for the Social Media Posting App (Pley) using Nest.js, MongoDB, and Next.js with MUI, facilitating content scheduling and posting.',
       'Led the backend and admin dashboard development for the Child Charity App (Warrior for Children) using Express.js, MongoDB, and Next.js with MUI, supporting donation management.',
+      'Developed the backend of the mobile app and admin dashboard for the Car and Boat Rental Platform (Caribo) using Node.js, Express, MongoDB, Next.js, and Tailwind CSS.',
     ],
   },
   {
